@@ -1,0 +1,101 @@
+,id,ori_label,ori_label_cls,tar_label,tar_label_cls
+0,c135b139d293f7f2,346,water buffalo,490,chain mail
+1,f5b0ed0fbb3b5f74,566,French horn,644,matchstick
+2,ba4b978112a20be1,971,bubble,15,robin
+3,d05076189b7fd185,707,pay-phone,764,rifle
+4,c755f3b0f89028fc,565,freight car,826,stopwatch
+5,d94940216544b2c5,311,grasshopper,621,lawn mower
+6,2e854fca826e54b3,857,throne,595,harvester
+7,f54616f2af588fd8,672,mountain tent,112,conch
+8,f6515f31b750a573,476,carousel,722,ping-pong ball
+9,6af829a442e2e0e7,129,spoonbill,230,Shetland sheepdog
+10,d77af00930283f4b,900,water tower,648,medicine chest
+11,44aa69f642b86628,879,umbrella,548,entertainment center
+12,024f73e53c3c1f1d,579,grand piano,637,mailbox
+13,5021e7da00bf43b2,479,car wheel,936,head cabbage
+14,e3c3f8889ac99aec,535,disk brake,896,washbasin
+15,611f453c4bb616b9,309,bee,64,green mamba
+16,137ab6ca314e9e35,619,lampshade,555,fire engine
+17,83d35591dfff99ac,580,greenhouse,856,thresher
+18,db6c6671a6924eba,406,altar,411,apron
+19,11c53fe6feb856c6,476,carousel,765,rocking chair
+20,5d6b9cadb6f9e1cd,895,warplane,745,projector
+21,fe94909a2fad4ffe,546,electric guitar,964,potpie
+22,bc7dff0960bb3335,442,bell cote,764,rifle
+23,8764eecf6e898c7f,483,castle,710,pencil sharpener
+24,2200794c59b1808e,310,ant,213,Irish setter
+25,24312de5c34473c0,873,triumphal arch,819,stage
+26,0707f3dfb7c29f5c,605,iPod,739,potter's wheel
+27,791c3d333052ca64,963,pizza,907,wine bottle
+28,d3a88c50958b1b5f,976,promontory,999,toilet tissue
+29,11afa51200515f9a,825,stone wall,566,French horn
+30,a7151de51c2f1d0b,344,hippopotamus,213,Irish setter
+31,80177288cda51d95,640,manhole cover,604,hourglass
+32,1ebff1b3c8de66de,336,marmot,809,soup bowl
+33,e8c99e0220ab46d2,590,hand-held computer,534,dishwasher
+34,5a0e21d54b9c4954,327,starfish,145,king penguin
+35,67c0339b1dfda5f6,557,flagpole,495,china cabinet
+36,ce05236afebb173d,535,disk brake,509,confectionery
+37,b6c6a5b7829fbc9b,472,canoe,505,coffeepot
+38,5b85f98e0105d135,569,garbage truck,932,pretzel
+39,3dc0e8f854bdc9b3,603,horse cart,920,traffic light
+40,c0e0c11350b8740e,318,lacewing,697,pajama
+41,56e9d5f63cfc507e,440,beer bottle,623,letter opener
+42,00312c7e7196baf4,326,lycaenid,219,cocker spaniel
+43,3228a465697fb2cf,839,suspension bridge,921,book jacket
+44,73064ceb466612d5,718,pier,672,mountain tent
+45,8e9e976fc98e3cfa,665,moped,739,potter's wheel
+46,5dd8e133e66ecd3a,141,redshank,345,ox
+47,8c609b06a60af060,498,cinema,290,jaguar
+48,582663fe666aac9c,922,menu,927,trifle
+49,b3ba6f0352a29b2d,751,racer,562,fountain
+50,7d7a8e41b8d0577e,964,potpie,181,Bedlington terrier
+51,3b32eca218ed3dbe,741,prayer rug,837,sunglasses
+52,1ef172b89f4a39cf,50,American alligator,535,disk brake
+53,6609c25b3314b5b3,511,convertible,877,turnstile
+54,513b3032ed1f388c,113,snail,541,drum
+55,33adbc27fdcadd65,923,plate,715,pickelhaube
+56,7b71925e989ee1d8,933,cheeseburger,34,leatherback turtle
+57,ad43e858c614db4d,967,espresso,70,harvestman
+58,7069a117c92d27a4,545,electric fan,185,Norfolk terrier
+59,78059d1afd7b9fea,57,garter snake,247,Saint Bernard
+60,05f7c084329ff0c6,972,cliff,909,wok
+61,303781188f1b3b27,476,carousel,338,guinea pig
+62,53fe22426ff21243,535,disk brake,778,scale
+63,ed9b2813b9245e52,879,umbrella,675,moving van
+64,d7d8fc1442a82a8e,21,kite,845,syringe
+65,c96c3eab644075d3,347,bison,299,meerkat
+66,f9f36f7774d73820,304,leaf beetle,722,ping-pong ball
+67,a6535c039bfeba2c,535,disk brake,291,lion
+68,8749fd2540a0cb01,832,stupa,447,binoculars
+69,218e02b6cfa0466e,698,palace,216,clumber
+70,7060ae82e5b96a77,521,Crock Pot,494,chime
+71,d9f624188d16fe93,39,common iguana,601,hoopskirt
+72,c9302f3b2b0452e4,883,vase,891,waffle iron
+73,24159caf9c5e92be,707,pay-phone,742,printer
+74,97917829607b6189,858,tile roof,659,mixing bowl
+75,60f5900a00d94b25,705,passenger car,557,flagpole
+76,631b6820e91a9e3e,12,house finch,302,ground beetle
+77,8bb7d10e97694eb5,142,dowitcher,392,rock beauty
+78,dd722682a9f2b9dd,436,beach wagon,457,bow tie
+79,fd26c4733822dfcc,362,badger,450,bobsled
+80,e7b61bec5e4ca40e,323,monarch,673,mouse
+81,d67b326ef48bb7b7,873,triumphal arch,545,electric fan
+82,04546cc5e537d7cd,425,barn,648,medicine chest
+83,d0fe8afb55c3c7cd,497,church,777,scabbard
+84,6a50fbe8723a6a4a,562,fountain,596,hatchet
+85,5a6439b10c1f6761,319,dragonfly,870,tricycle
+86,19b5bea9a7608a92,777,scabbard,434,bath towel
+87,e5f15610a22098bb,671,mountain bike,574,golf ball
+88,a414ccf5c51454e0,829,streetcar,865,toyshop
+89,42e55ac6782d4d99,973,coral reef,818,spotlight
+90,408bae58c26a8076,132,American egret,760,refrigerator
+91,4dc360d125c9238c,526,desk,839,suspension bridge
+92,5cf72b48fdf5e419,629,lipstick,743,prison
+93,8094d4088a08cf09,440,beer bottle,614,kimono
+94,ac2a8a4777dbe746,895,warplane,45,Gila monster
+95,0d65cb9d26de4d37,570,gasmask,335,fox squirrel
+96,0b1d45bd9ab1064e,560,football helmet,562,fountain
+97,23955512cd0e1191,475,car mirror,741,prayer rug
+98,c6166621198a3de4,985,daisy,746,puck
+99,70b3b833463d20b9,863,totem pole,856,thresher
