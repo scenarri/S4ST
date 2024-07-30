@@ -99,7 +99,7 @@ def main(args):
                         X_trans = DI(X_ori + delta, resize_rate_H=330/300, diversity_prob=0.7)
                     elif args.methods == 'RDI':
                         X_trans = RDI(X_ori + delta, resize_rate_H=340/300, diversity_prob=0.7)
-                    elif args.methods == 'Scaling' or args.methods == 'HAug':
+                    elif args.methods == 'Scaling':
                         X_trans = scaling_.scaling(X_ori + delta)
                     elif args.methods == 'ODI':
                         X_trans = render_3d_aug_input(x_adv=(X_ori + delta), renderer=renderer, prob=0.7)
