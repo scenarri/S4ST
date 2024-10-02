@@ -6,69 +6,46 @@ from utils import *
 import torch.nn.functional as F
 import torch_dct as dct
 import scipy.stats as st
+import torchvision.transforms.functional as TF
 
 class S4ST_transformer():
-    def __init__(self, num_block=[2,3], pR=0.9, pAug=1.0, r=1.9):
+    def __init__(self, num_block=[2,3], pR=0.9, pAug=1.0, r=1.7, pop_idx=-1):
         super().__init__()
-        self.rand_augs = [self.vertical_shift, self.horizontal_shift, self.vertical_flip, self.horizontal_flip,
-                   self.rotate180, self.scale, self.add_noise, self.dct, self.drop_out]
+        self.rand_augs = [self.flip, self.contrast, self.brightness, self.saturation, self.hue]
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.pR = pR
         self.pAug = pAug
         self.num_block = num_block
         self.r = r
-    def vertical_shift(self, x):
-        _, _, w, _ = x.shape
-        step = np.random.randint(low=0, high=w, dtype=np.int32)
-        return x.roll(step, dims=2)
+        if pop_idx != -1:
+            self.rand_augs.pop(pop_idx)
+        
+    def flip(self, x):
+        r = torch.randint(low=0, high=2, size=[1])
+        if float(r) == 0.:
+            return TF.hflip(x)
+        if float(r) == 1.:
+            return TF.vflip(x)
 
-    def horizontal_shift(self, x):
-        _, _, _, h = x.shape
-        step = np.random.randint(low=0, high=h, dtype=np.int32)
-        return x.roll(step, dims=3)
+    def hue(self, x):
+        r = float((torch.rand(1,) * 2 - 1) * 0.5)
+        return TF.adjust_hue(x, r)
 
-    def vertical_flip(self, x):
-        return x.flip(dims=(2,))
+    def contrast(self, x):
+        r = float((torch.rand(1,) * 2 - 1) * 1 + 1)
+        return TF.adjust_contrast(x, r)
 
-    def horizontal_flip(self, x):
-        return x.flip(dims=(3,))
+    def saturation(self, x):
+        r = float((torch.rand(1,) * 2 - 1) * 1 + 1)
+        return TF.adjust_saturation(x, r)
 
-    def rotate180(self, x):
-        return x.rot90(k=2, dims=(2, 3))
+    def brightness(self, x):
+        r = float((torch.rand(1,) * 2 - 1) * 1 + 1)
+        return TF.adjust_brightness(x, r)
 
-    def scale(self, x):
-        return torch.rand(1)[0] * x
-
-    def dct(self, x):
-        """
-        Discrete Fourier Transform
-        """
-        dctx = dct.dct_2d(x)  # torch.fft.fft2(x, dim=(-2, -1))
-        _, _, w, h = dctx.shape
-        low_ratio = 0.4
-        low_w = int(w * low_ratio)
-        low_h = int(h * low_ratio)
-        # dctx[:, :, -low_w:, -low_h:] = 0
-        dctx[:, :, -low_w:, :] = 0
-        dctx[:, :, :, -low_h:] = 0
-        dctx = dctx  # * self.mask.reshape(1, 1, w, h)
-        idctx = dct.idct_2d(dctx)
-        return idctx
-
-    def add_noise(self, x):
-        return torch.clip(x + torch.zeros_like(x).uniform_(-16 / 255, 16 / 255), 0, 1)
-
-    def gkern(self, kernel_size=3, nsig=3):
-        x = np.linspace(-nsig, nsig, kernel_size)
-        kern1d = st.norm.pdf(x)
-        kernel_raw = np.outer(kern1d, kern1d)
-        kernel = kernel_raw / kernel_raw.sum()
-        stack_kernel = np.stack([kernel, kernel, kernel])
-        stack_kernel = np.expand_dims(stack_kernel, 1)
-        return torch.from_numpy(stack_kernel.astype(np.float32)).to(self.device)
-
-    def drop_out(self, x):
-        return F.dropout2d(x, p=0.1, training=True)
+    def solarize(self, x):
+        r =  1 - torch.rand(1).item()
+        return TF.solarize(x, r)
 
     def _base(self, x):
         if torch.rand(1) < self.pR:
@@ -114,7 +91,6 @@ class S4ST_transformer():
             for j, idx_y in enumerate(y_axis[1:]):
                 x_copy[:, :, x_axis[i]:idx_x, y_axis[j]:idx_y] = self._base(x_copy[:, :, x_axis[i]:idx_x, y_axis[j]:idx_y])
         return x_copy
-
 
     def transform(self, x):
         return self.blocktransform(x)
