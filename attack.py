@@ -166,7 +166,7 @@ if __name__ == '__main__':
     parser.add_argument('--decay', type=float, default=1.)
     parser.add_argument('--save', action='store_false')
     parser.add_argument('--methods', type=str, default='S4ST', help='None/DI/RDI/ODI/SI/Admix/SSA/SIA/BSR/S4ST/Scaling')
-    parser.add_argument('--r', type=float, default=1.9)
+    parser.add_argument('--r', type=float, default=1.7)
     parser.add_argument('--pR', type=float, default=0.9)
     parser.add_argument('--pAug', type=float, default=1.0)
     parser.add_argument('--block', type=parse_list, default=[2,3])
