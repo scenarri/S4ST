@@ -13,9 +13,10 @@
 
 ## Contributions
 
-1. We contribute a novel and concise self-universal perspective, shedding new light on elucidating the pivotal role of input transformations in TTA. In contrast to the previous consensus, it reveals the feasibility of enhancing targeted transferability by strong transformations.
-2. To the best of our knowledge, we are the first to experimentally investigate the impact of a single transformation method on targeted transferability. Our empirical demonstration highlights the significant potential of simple scaling in enhancing TTA. Furthermore, we propose the S4ST to integrate complementary gains from existing methods to achieve superior performance.
-3. We conduct comprehensive experiments against diverse and challenging victim models under various settings on the ImageNet-Compatible benchmark dataset. Results demonstrated that our method outperforms SOTA methods by a significant margin in terms of both effectiveness and efficiency.
+1. We revisit various relevant transformation techniques and the prevailing consensus on designing them for transfer attacks. Our experimental results elucidate the critical role of image transformations in simple TTAs and underscore the current consensus's limitations in understanding these transformations' effectiveness.
+2. We introduce effective black-box measures and provide valuable insights. Self-transferability against basic geometric transformations is verified as a reliable indicator of black-box transferability. We further propose surrogate self-alignment to blindly estimate the benefits of attacking basic transformations in enhancing targeted transferability. These two allow for feasible analysis of basic transformations under the black-box setting, significantly diminishing the dependence on empirical or intuitive choices common in current research.
+3. To the best of our knowledge, we are the pioneers in demonstrating the uniquely superior efficacy of simple scaling transformations in promoting targeted transferability. An advanced scaling-centric transformation, S4ST, is further devised, ingeniously integrating modified scaling with complementary transformations and leveraging the benefits of block-wise operations.
+4. Through extensive and comprehensive experiments on the ImageNet-Compatible dataset, we substantiate our proposed method's effectiveness and efficiency, outperforming existing resource-intensive and simple solutions by considerable margins, thereby establishing a new SOTA for TTAs.
 
 
 ## Acknowledgements
