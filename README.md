@@ -80,6 +80,10 @@ Run the following command; it will print the results (before that, please downlo
 python eval_10targets.py --attack TTP (TTP/M3D/SIA/BSR/S4ST)
 ```
 
+## Self-alignment, self-transferability, and beyond
 
+please see [self_alignment_analysis.py](https://github.com/scenarri/S4ST/blob/main/self_alignment_analysis.py) and [self_transferability_correlation_analysis.py](https://github.com/scenarri/S4ST/blob/main/self_transferability_correlation_analysis.py) for details.
+
+The generated adversarial examples for most cases are provided at [BaiduNetDisk](https://) for further analysis and evaluation, including the RN50-halfRRC and RN50-woRRC weights and results obtained by commercial APIs and VLMs.
 
 
