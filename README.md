@@ -1,34 +1,28 @@
-# S4ST_TTA
-:wave: This is a pytorch script to reproduce the experiments in our paper for simple transferable targeted attacks.
+<h1 align="center"> S<sup>4</sup>ST: A Strong, Self-transferable, faSt, and Simple Scale Transformation for Data-free Transferable Targeted Attack </h1> 
+<h5 align="center"><em> Yongxiang Liu, Bowen Peng, Li Liu, Xiang Li </em></h5>
 
-
-## Contents  
-
-1) [Contributions](#Contributions) 
-2) [Acknowledgements](#Acknowledgements)
-3) [Pretrained Weights](#Pretrained-Weights) 
-4) [Generating Targeted Adversarial Examples](#Generating-Targeted-Adversarial-Examples) 
-5) [Evaluation](#Evaluation)
-
+<p align="center">
+    <a href="#contributions">Contributions</a> |
+    <a href="#evaluation">Evaluation</a> |
+    <a href="#analysis">Analysis</a> |
+    <a href="#resources">Resources</a> |
+    <a href="#acknowledgements">Acknowledgements</a> |
+    <a href="#statement">Statement</a>
+</p >
+<p align="center">
+	<a href="https://ieeexplore.ieee.org/document/"><img src="https://img.shields.io/badge/Paper-TPAMI-blue"></a>
+    <a href="https://arxiv.org/abs/2410.13891"><img src="https://img.shields.io/badge/Paper-arxiv-red"></a>
+    <a href="https://www.wjx.top/vm/YOHgMtK.aspx"><img src="https://img.shields.io/badge/Resource-BaiduNetDisk-blue"></a>
+</p>
 
 ## Contributions
 
-1. We propose two blind estimation measures: surrogate self-alignment and self-transferability against basic transformations. Serving as effective proxies for the black-box transferability of targeted AEs, they enable feasible analyses of the effectiveness and synergistic effect of various basic transformations without accessing any additional data and victim models, significantly diminishing the dependence on empirical or intuitive choices common in the prior art.
-2. To the best of our knowledge, we are the pioneers in revealing the unique superior efficacy of the simple scaling transformation in enhancing targeted transferability, and the redundancies within geometric and color transformations. Based on these, we further design S4ST, an advanced scaling-centered transformation that ingeniously integrates modified scaling with complementary transformations and leverages the benefits of block-wise operations, adhering to a strict black-box manner.
-3. Extensive and comprehensive experiments on the ImageNet-Compatible dataset substantiate the effectiveness and efficiency of S$^4$ST. It not only outperforms existing transformation techniques in terms of both effectiveness and efficiency but also surpasses SOTA TTA solutions that depend on 50k to 1.2 million training samples, all without requiring additional data. It also exhibits exceptional transferability to commercial APIs and vision-language models. It is found to significantly improve the exploitation of existing visual elements to produce highly transferable target semantics, circumventing the necessity to learn this capability from extensive multi-class data.
+1. We propose self-alignment and self-transferability as blind estimation measures. They serve as effective proxies to analyze basic transformations' effectiveness and synergies without accessing victims or extra data, reducing the reliance on empirical choices common in prior art.
+2. We pioneer the discovery of simple scaling's superior efficacy in enhancing targeted transferability. This stems from visual data's inherent nature and the universal adoption of scale augmentation during training, revealing a dual-edged sword: practices enhancing generalization simultaneously introduce transfer attack vulnerabilities.
+3. We propose S<sup>4</sup>ST, an advanced scaling-centered transformation integrating modified scaling, complementary transformations, and block-wise operations under strict black-box constraints.
+4. Extensive evaluations across natural images, medical imaging, and face verification validate our framework's transferability. S<sup>4</sup>ST outperforms existing transformation methods and data-reliant SoTA TTAs (using 50k-1.2M samples), showing robust transferability to commercial APIs and vision-language models (VLMs).
 
-
-## Acknowledgements
-
-This repository benefits a lot from previous works, including [CFM](https://github.com/dreamflake/CFM), [Targeted-Transfer](https://github.com/ZhengyuZhao/Targeted-Tansfer), [TransferAttackEval
-](https://github.com/ZhengyuZhao/TransferAttackEval), [TransferAttack](https://github.com/Trustworthy-AI-Group/TransferAttack). Sincere thanks for their contributions to the adversarial machine learning community.
-
-## Pretrained Weights
-
-Most evaluated models can be automatically downloaded by *torchvision* and *[timm](https://github.com/huggingface/pytorch-image-models)*. 
-Please manually download other pretrained weights ([SIN&IN](https://github.com/rgeirhos/texture-vs-shape/blob/master/models/load_pretrained_models.py), [Augmix](https://drive.google.com/file/d/1z-1V3rdFiwqSECz7Wkmn4VJVefJGJGiF/view?usp=sharing), [AT](https://huggingface.co/madrylab/robust-imagenet-models), [Ensemble AT](https://github.com/ylhz/tf_to_pytorch_model)) and drop them to './models/weights/'.
-
-## Generating Targeted Adversarial Examples
+## Evaluation
 
 ### Requirements
 
@@ -46,9 +40,9 @@ conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 conda install pytorch3d
 ```
 
-### Simple Targeted Attack
+### Generating Targeted Adversarial Examples
 
-You can perform simple targeted attacks with various input transformation methods, and using a single or multiple surrogate models, with the following command:
+You can perform targeted attacks with various input transformation methods, and using a single or multiple surrogate models, with the following command:
 
 ```
 python attack.py  --surrogate resnet50 (or use multiple models by comma, e.g., resnet50,resnet152,densenet121,vgg16_bn)
@@ -61,8 +55,6 @@ python attack.py  --surrogate resnet50 (or use multiple models by comma, e.g., r
 ```
 
 This will print the save dir. and save all adversarial examples there (at './results/').
-
-## Evaluation
 
 ### ImageNet-Compatible dataset evaluation
 
@@ -80,10 +72,38 @@ Run the following command; it will print the results (before that, please downlo
 python eval_10targets.py --attack TTP (TTP/M3D/SIA/BSR/S4ST)
 ```
 
-## Self-alignment, self-transferability, and beyond
+## Analysis
+
+### Self-alignment, self-transferability, and beyond
 
 please see [self_alignment_analysis.py](https://github.com/scenarri/S4ST/blob/main/self_alignment_analysis.py) and [self_transferability_correlation_analysis.py](https://github.com/scenarri/S4ST/blob/main/self_transferability_correlation_analysis.py) for details.
 
+## Resources
+
+Most evaluated models can be automatically downloaded by *torchvision* and *[timm](https://github.com/huggingface/pytorch-image-models)*. 
+Please manually download other pretrained weights ([SIN&IN](https://github.com/rgeirhos/texture-vs-shape/blob/master/models/load_pretrained_models.py), [Augmix](https://drive.google.com/file/d/1z-1V3rdFiwqSECz7Wkmn4VJVefJGJGiF/view?usp=sharing), [AT](https://huggingface.co/madrylab/robust-imagenet-models), [Ensemble AT](https://github.com/ylhz/tf_to_pytorch_model)) and drop them to './models/weights/'.
+
 The generated adversarial examples for most cases are provided at [BaiduNetDisk](https://) for further analysis and evaluation, including the RN50-halfRRC and RN50-woRRC weights and results obtained by commercial APIs and VLMs.
 
+## Acknowledgements
 
+This repository benefits a lot from previous works, including [CFM](https://github.com/dreamflake/CFM), [Targeted-Transfer](https://github.com/ZhengyuZhao/Targeted-Tansfer), [TransferAttackEval
+](https://github.com/ZhengyuZhao/TransferAttackEval), [TransferAttack](https://github.com/Trustworthy-AI-Group/TransferAttack). Sincere thanks for their contributions to the adversarial machine learning community.
+
+## Statement
+
+- If you have any questions, please contact us via pbow16@nudt.edu.cn. 
+
+- If you find our work is useful, please give us a star 🌟 in GitHub and cite our paper in the following BibTex format:
+
+```
+@ARTICLE{liu2026s4st,
+  author={Liu, Yongxiang and Peng, Bowen and Liu, Li and Li, Xiang},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={{S4ST}: A Strong, Self-transferable, faSt, and Simple Scale Transformation for Data-free Transferable Targeted Attack}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-17}
+}
+```
