@@ -12,7 +12,7 @@
 <p align="center">
 	<a href="https://ieeexplore.ieee.org/document/"><img src="https://img.shields.io/badge/Paper-TPAMI-blue"></a>
     <a href="https://arxiv.org/abs/2410.13891"><img src="https://img.shields.io/badge/Paper-arxiv-red"></a>
-    <a href="https://www.wjx.top/vm/YOHgMtK.aspx"><img src="https://img.shields.io/badge/Resource-BaiduNetDisk-blue"></a>
+    <a href="https://pan.baidu.com/s/1lI1KRHAyris49v5DDRW5bw?pwd=1huy"><img src="https://img.shields.io/badge/Resource-BaiduNetDisk-blue"></a>
 </p>
 
 ## Contributions
@@ -83,7 +83,7 @@ please see [self_alignment_analysis.py](https://github.com/scenarri/S4ST/blob/ma
 Most evaluated models can be automatically downloaded by *torchvision* and *[timm](https://github.com/huggingface/pytorch-image-models)*. 
 Please manually download other pretrained weights ([SIN&IN](https://github.com/rgeirhos/texture-vs-shape/blob/master/models/load_pretrained_models.py), [Augmix](https://drive.google.com/file/d/1z-1V3rdFiwqSECz7Wkmn4VJVefJGJGiF/view?usp=sharing), [AT](https://huggingface.co/madrylab/robust-imagenet-models), [Ensemble AT](https://github.com/ylhz/tf_to_pytorch_model)) and drop them to './models/weights/'.
 
-The generated adversarial examples for most cases are provided at [BaiduNetDisk](https://) for further analysis and evaluation, including the RN50-halfRRC and RN50-woRRC weights and results obtained by commercial APIs and VLMs.
+The generated adversarial examples for most cases are provided at [BaiduNetDisk](https://pan.baidu.com/s/1lI1KRHAyris49v5DDRW5bw?pwd=1huy) for further analysis and evaluation, including the RN50-halfRRC and RN50-woRRC weights and results obtained by commercial APIs and VLMs.
 
 ## Acknowledgements
 
