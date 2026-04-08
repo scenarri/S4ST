@@ -7,10 +7,10 @@
     <a href="#analysis">Analysis</a> |
     <a href="#resources">Resources</a> |
     <a href="#acknowledgements">Acknowledgements</a> |
-    <a href="#statement">Statement</a>
+    <a href="#citation">Citation</a>
 </p >
 <p align="center">
-	<a href="https://ieeexplore.ieee.org/document/"><img src="https://img.shields.io/badge/Paper-TPAMI-blue"></a>
+	<a href="https://ieeexplore.ieee.org/document/11475894"><img src="https://img.shields.io/badge/Paper-TPAMI-purple"></a>
     <a href="https://arxiv.org/abs/2410.13891"><img src="https://img.shields.io/badge/Paper-arxiv-red"></a>
     <a href="https://pan.baidu.com/s/1lI1KRHAyris49v5DDRW5bw?pwd=1huy"><img src="https://img.shields.io/badge/Resource-BaiduNetDisk-blue"></a>
 </p>
@@ -90,7 +90,7 @@ The generated adversarial examples for most cases are provided at [BaiduNetDisk]
 This repository benefits a lot from previous works, including [CFM](https://github.com/dreamflake/CFM), [Targeted-Transfer](https://github.com/ZhengyuZhao/Targeted-Tansfer), [TransferAttackEval
 ](https://github.com/ZhengyuZhao/TransferAttackEval), [TransferAttack](https://github.com/Trustworthy-AI-Group/TransferAttack). Sincere thanks for their contributions to the adversarial machine learning community.
 
-## Statement
+## Citation
 
 - If you have any questions, please contact us via pbow16@nudt.edu.cn. 
 
@@ -100,10 +100,11 @@ This repository benefits a lot from previous works, including [CFM](https://gith
 @ARTICLE{liu2026s4st,
   author={Liu, Yongxiang and Peng, Bowen and Liu, Li and Li, Xiang},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
-  title={{S4ST}: A Strong, Self-transferable, faSt, and Simple Scale Transformation for Data-free Transferable Targeted Attack}, 
+  title={S $^{4}$ ST: A Strong, Self-transferable, faSt, and Simple Scale Transformation for Data-free Transferable Targeted Attack}, 
   year={2026},
   volume={},
   number={},
-  pages={1-17}
+  pages={1-17},
+  doi={10.1109/TPAMI.2026.3679507}
 }
 ```
