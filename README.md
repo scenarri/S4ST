@@ -100,7 +100,7 @@ This repository benefits a lot from previous works, including [CFM](https://gith
 @ARTICLE{liu2026s4st,
   author={Liu, Yongxiang and Peng, Bowen and Liu, Li and Li, Xiang},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
-  title={S $^{4}$ ST: A Strong, Self-transferable, faSt, and Simple Scale Transformation for Data-free Transferable Targeted Attack}, 
+  title={{S$^{4}$ST}: A Strong, Self-transferable, faSt, and Simple Scale Transformation for Data-free Transferable Targeted Attack}, 
   year={2026},
   volume={},
   number={},
